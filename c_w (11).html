@@ -1,0 +1,1341 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C&W | 台灣富發牌古著鞋香港代理</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            500: '#ea580c',
+                            600: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 自訂滾動條與滑動動畫 */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        .drawer-overlay {
+            background-color: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(4px);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col selection:bg-orange-500 selection:text-white">
+
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-sm transition-all duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+            <!-- 品牌 LOGO (已更新為新連結) -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-11 h-11 rounded-2xl overflow-hidden shadow-md group-hover:scale-105 transition-all duration-300 bg-white border border-slate-200 flex items-center justify-center">
+                    <img src="https://i.imageupload.app/f93d006c9a3b5ac129fd.jpeg" alt="C&W Logo" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-tight text-slate-900 block leading-none">C&W</span>
+                    <span class="text-[11px] font-bold text-orange-600 uppercase tracking-wider mt-1 block">台灣富發牌古著鞋香港代理</span>
+                </div>
+            </a>
+
+            <!-- 導航選單 -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+                <a href="#catalog" class="text-slate-900 hover:text-orange-600 transition">所有鞋款</a>
+                <a href="#contact" class="hover:text-orange-600 transition">聯絡我們</a>
+            </nav>
+
+            <!-- 右側功能按鈕 (Wishlist & WhatsApp) -->
+            <div class="flex items-center space-x-3">
+                <button onclick="toggleWishlistDrawer()" class="relative p-2.5 rounded-full bg-slate-100 hover:bg-slate-200/80 text-slate-700 transition flex items-center justify-center">
+                    <i class="fa-regular fa-heart text-lg"></i>
+                    <span id="wishlist-badge" class="absolute -top-1 -right-1 bg-rose-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white shadow-sm hidden">0</span>
+                </button>
+                
+                <a href="https://wa.me/85267914732" target="_blank" class="hidden sm:flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold px-4 py-2.5 rounded-full shadow-md hover:shadow-emerald-600/20 transition duration-200">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>+852 67914732</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative bg-slate-900 text-white py-12 sm:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#f97316_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        <div class="max-w-7xl mx-auto relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-4 text-center md:text-left">
+                <span class="inline-flex items-center gap-2 bg-orange-500/20 text-orange-300 border border-orange-500/30 text-xs px-3.5 py-1.5 rounded-full font-semibold tracking-wider uppercase">
+                    <i class="fa-solid fa-certificate text-orange-400"></i> 台灣製造，台灣直送
+                </span>
+                <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
+                    C&W 專營 <br class="hidden sm:inline"><span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">台灣富發牌古著鞋香港代理</span>
+                </h1>
+                <p class="text-slate-300 text-sm sm:text-base max-w-lg mx-auto md:mx-0 leading-relaxed">
+                    本站為台灣富發牌古著鞋香港經銷商/代理。主打富發牌產品，100%台灣製造。堅持平實價格與優質舒適度，為您帶來極致穿著體驗。
+                </p>
+                <div class="pt-2 flex flex-wrap gap-3 justify-center md:justify-start text-xs text-slate-300 font-medium">
+                    <span class="flex items-center gap-1.5 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700"><i class="fa-solid fa-flag text-orange-400"></i> 台灣製造</span>
+                    <span class="flex items-center gap-1.5 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700"><i class="fa-solid fa-truck-fast text-emerald-400"></i> 支援順豐速運</span>
+                    <span class="flex items-center gap-1.5 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700"><i class="fa-brands fa-whatsapp text-emerald-400"></i> 專人專屬查詢</span>
+                </div>
+            </div>
+            
+            <div class="relative hidden md:block">
+                <div class="absolute -inset-1 bg-gradient-to-r from-orange-500 to-amber-500 rounded-3xl blur-2xl opacity-30"></div>
+                <img src="https://www.uty-im.com/im/home/2022/2022AW%20(1).jpg" alt="台灣富發牌古著鞋" class="relative rounded-3xl object-cover shadow-2xl w-full h-[360px] border border-slate-700">
+            </div>
+        </div>
+    </section>
+
+    <main id="catalog" class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+        
+        <!-- 控制區域：搜尋 + 分類 -->
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 border-b border-slate-200">
+            
+            <!-- 分類頁籤按鈕 -->
+            <div id="category-filters" class="flex items-center gap-2 overflow-x-auto pb-2 lg:pb-0 scrollbar-none">
+                <button data-category="all" class="filter-btn active whitespace-nowrap px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-slate-900 text-white shadow-sm transition">全部鞋款</button>
+                <button data-category="最新推介" class="filter-btn whitespace-nowrap px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition">最新推介</button>
+                <button data-category="熱銷女鞋" class="filter-btn whitespace-nowrap px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition">熱銷女鞋</button>
+                <button data-category="熱銷男鞋" class="filter-btn whitespace-nowrap px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition">熱銷男鞋</button>
+                <button data-category="熱銷童鞋" class="filter-btn whitespace-nowrap px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition">熱銷童鞋</button>
+                <button data-category="特選優惠鞋" class="filter-btn whitespace-nowrap px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition">特選優惠鞋</button>
+            </div>
+
+            <!-- 搜尋框 -->
+            <div class="relative w-full lg:w-80">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-slate-400">
+                    <i class="fa-solid fa-magnifying-glass text-sm"></i>
+                </span>
+                <input type="text" id="search-input" placeholder="搜尋款式、材質或功能..." class="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-full text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 shadow-sm transition">
+            </div>
+        </div>
+
+        <!-- 產品計數 -->
+        <div class="flex items-center justify-between text-xs text-slate-500 font-medium">
+            <span>顯示 <span id="product-count" class="font-bold text-slate-900">0</span> 款精選商品</span>
+            <span class="hidden sm:inline">可直接點擊圖片查看多角度圖片及試穿詳情</span>
+        </div>
+
+        <!-- 商品格網 Grid -->
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- JS 渲染內容 -->
+        </div>
+
+        <!-- 無搜尋結果 -->
+        <div id="no-products" class="hidden text-center py-20 bg-white rounded-3xl border border-slate-200 shadow-sm">
+            <i class="fa-regular fa-face-frown text-5xl text-slate-300 mb-4"></i>
+            <h3 class="text-lg font-bold text-slate-800">未找到符合條件的鞋款</h3>
+            <p class="text-xs sm:text-sm text-slate-500 mt-1">請嘗試縮短搜尋字詞或切換其他商品分類。</p>
+        </div>
+    </main>
+
+    <!-- 商品 Modal 詳情彈窗 -->
+    <div id="product-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 opacity-0 pointer-events-none transition-all duration-300">
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="closeModal()"></div>
+        <div id="modal-content" class="relative bg-white rounded-3xl max-w-3xl w-full max-h-[92vh] overflow-y-auto shadow-2xl transform scale-95 transition-all duration-300 z-10">
+            <!-- JS 動態插入內容 -->
+        </div>
+    </div>
+
+    <!-- 心水清單 Drawer -->
+    <div id="wishlist-drawer" class="fixed inset-0 z-50 pointer-events-none">
+        <div id="wishlist-backdrop" onclick="toggleWishlistDrawer()" class="absolute inset-0 drawer-overlay opacity-0 transition-opacity duration-300 pointer-events-none"></div>
+        <div id="wishlist-panel" class="absolute top-0 right-0 w-full sm:w-96 h-full bg-white shadow-2xl transform translate-x-full transition-transform duration-300 pointer-events-auto flex flex-col">
+            <div class="p-5 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+                <div class="flex items-center space-x-2">
+                    <i class="fa-solid fa-heart text-rose-500"></i>
+                    <h3 class="font-bold text-slate-900">我的心水清單</h3>
+                </div>
+                <button onclick="toggleWishlistDrawer()" class="p-2 rounded-full hover:bg-slate-200 text-slate-500">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div id="wishlist-items" class="flex-grow overflow-y-auto p-4 space-y-3">
+                <!-- JS 渲染 -->
+            </div>
+            <div class="p-5 border-t border-slate-200 bg-slate-50 space-y-3">
+                <a id="wishlist-wa-btn" href="#" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-4 rounded-xl text-center shadow-md transition flex items-center justify-center space-x-2 text-sm">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>一次過 WhatsApp 查詢清單</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-white border-t border-slate-200 mt-20 text-slate-600 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="space-y-4 md:col-span-1">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 rounded-xl overflow-hidden shadow-sm bg-white border border-slate-200 flex items-center justify-center">
+                        <img src="https://i.imageupload.app/f93d006c9a3b5ac129fd.jpeg" alt="C&W Logo" class="w-full h-full object-cover">
+                    </div>
+                    <span class="font-black text-slate-900 text-lg tracking-tight">C&W 香港代理</span>
+                </div>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    本站為台灣富發牌古著鞋香港經銷商/代理。主打富發牌產品，100%台灣直送。
+                </p>
+                <div class="flex space-x-3 text-slate-400">
+                    <a href="https://wa.me/85267914732" target="_blank" class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center hover:bg-emerald-50 hover:text-emerald-600 transition"><i class="fa-brands fa-whatsapp text-base"></i></a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center hover:bg-orange-50 hover:text-orange-600 transition"><i class="fa-brands fa-instagram text-base"></i></a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center hover:bg-orange-50 hover:text-orange-600 transition"><i class="fa-brands fa-facebook text-base"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-slate-900 mb-4 text-xs uppercase tracking-wider">購物須知</h4>
+                <p class="text-xs text-slate-500 leading-relaxed mb-3">
+                    【下單&付款方式】
+►Whatsapp下單:使用 轉數快FPS / PayMe 
+
+
+
+
+【尺寸問題】
+►請務必謹慎確定您的下單尺寸。
+►小店全部鞋款，都以cm計算，請買家先為自己量度腳長後購買。(請參考尺寸測量)
+
+【關於缺貨 / 補貨】
+►訂單有時候因貨存有誤導致您選購的貨品已沒有存貨，我們會盡快通知您。
+
+►若已下單後但缺貨，小店可無條件退款，或選擇多退少補換貨。
+►如會補貨，您亦可選擇耐心等待。
+                </p>
+                </span>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-slate-900 mb-4 text-xs uppercase tracking-wider">送貨條款</h4>
+                <p class="text-xs text-slate-500 leading-relaxed mb-3">
+                    【送貨方式】
+►順豐到付 (約HK$3x-$4x/kg)
+
+【貨物包裝】
+►為節省您的運送費用，商品寄送時不會包含鞋盒(如有需要，請註明)
+
+【貨物運送】
+►小店確定訂單後，在存貨齊全下3日內出貨（不含週六/日/假期），不包含快遞公司的運送時程。
+►若訂單中同時包含需預購商品時，將以預購商品的到貨時一併發貨。
+►若買家提出分批寄出之要求，產生之額外運費需由買家承擔。
+
+【追蹤貨物】
+►店家出貨後會寄發通知信函，提供順豐號碼。方便你於順豐APPs系統查詢訂單。
+►寄出後預計1-3個工作日收貨，實際時間以順豐快遞公司為準。
+►然而由於運送過程由順豐速運 (第三方) 處理，可能受到天氣、交通、公眾假期、智能櫃沒有空位入件等種種因素影響。
+►對以上情況，小店會盡力協助跟進處理，然而小店並無約束力且無法承諾確實到達時間，小店不會負擔貴客因貨品延誤送抵之任何損失。
+                </p>
+                </span>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-slate-900 mb-4 text-xs uppercase tracking-wider">常見問題</h4>
+                <p class="text-xs text-slate-500 leading-relaxed mb-3">
+                    【如何成為會員】
+►點擊Whatsapp 下單並填寫基本資料送出即可註冊成為cnwlady會員 訂購商品。
+
+【關於下單/查詢問題】
+►只接受whatsapp / Inbox 查詢/下單
+►❌恕不接受電話查詢
+
+【退換貨政策】
+►尺寸不合換碼，您需自行負擔來回運費。
+►換貨時，買方需提供換貨理由、照片及相關配合事項，請與店家溝通及協議達成後寄回換貨。
+►而換貨之物品需包裝完整、未經穿著使用、不影響二次販售。
+►小店已提供優惠的低價格給顧客，若需退換貨，須付$10/對手續費 以及來回運費(1對大約$60-$75)。
+►另外，如小店寄送疏失、貨物品質問題，將免除相關手續費 及運費。
+
+
+                </p>
+                </span>
+            </div>
+            
+            <div>
+                <h4 class="font-bold text-slate-900 mb-4 text-xs uppercase tracking-wider">條款與細則</h4>
+                <p class="text-xs text-slate-500 leading-relaxed mb-3">
+                    【不接受退換貨】
+►恕不接受以下之退換貨請求包括：不喜歡了、下錯單了、後悔了、運費、顏色、色澤與預期不符合。
+►另以下不屬瑕疵範圍，不接受以下理由進行退換貨 :
+色差、味道、溢膠、線頭、記號、些微不對襯、少許脫線、表面刮擦不超過一公分、商品不喜歡、與想像不符。
+►所有特價、活動商品，恕不設退貨服務。
+►網頁上的圖片與實物的顏色會因在不同燈光、不同顯示器下的色彩均有所不同，導致貨品在顏色方面可能存在色差，您對此應有所了解，顏色以實際商品為主。
+►請注意，鞋款皆為手工製品無法保持每一批商品均一模一樣，難免會有些許的溢膠、不對稱、記號、脫線或小於1cm的刮擦均是手工製品可能產生的瑕疵，廠方會盡力做好品質控管，但也請理解此為手工鞋之固有特性，下單前請充分理解手工鞋特性後再購買。►我們盡力準確地量度貨品的尺寸，但由於面料 / 物料的彈性程度以及測量方式的標準不同，或許會存輕微誤差 (1-3cm)。
+►小店盡力使網頁上的所有貨品資料包括相片、貨品描述、優惠及價錢等為正確。但倘若在您的訂單上有任何貨品資料被錯誤刊登或存有錯誤，請盡快聯絡小店，您可選擇繼續購買或取消有關訂單。
+►手工鞋需專注於品質與細節，無法大量快速製作生產，所以採取現貨+預購的模式販售。
+►小店會經常更新網頁上的資訊，價格及優惠或許會因匯率或其他因素而有所調整。
+►網頁上的資料應是完整的，然而資料可能包含打字 / 字眼錯誤，定價或其他錯誤或不準確之處，我們會盡快糾正不準確之資料。
+►小店保留以下權利 : (i) 撤銷任何優惠 ; (ii) 糾正任何錯誤或遺漏 ; 及 (iii) 更改價格，內容，推廣優惠，產品說明或規格，或其他資訊，如有糾正資料，恕不另行通知。
+►如有任何爭議，以小店之決定為最終裁判。
+                </p>
+                </span>
+            </div>
+        </div>
+
+        <div class="border-t border-slate-100 bg-slate-50/50 py-6 text-center text-xs text-slate-400">
+            &copy; 2026 C&W HK. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // 商品數據資料庫
+        const products = [
+            {
+                id: 1,
+                name: "厚底都會樂福鞋 (1CT38)",
+                brand: "台灣富發牌",
+                category: "熱銷女鞋",
+                price: 188,
+                originalPrice: 308,
+                tag: "熱銷女鞋",
+                description: "經典素面款式，細緻簡約大方，完美搭配牛仔褲與長裙。台灣師傅手工車縫，線條流暢，採用真皮乳膠鞋墊，穿起舒適加倍，行街通勤百搭款，耐磨防滑又安全風格。",
+                 sizes: ["230", "235", "240", "245", "250", "255"],
+                colour: ["黑", "米白", "杏"],
+                images: [
+         "https://img.91app.com/webapi/imagesV3/Original/SalePage/10990964/2/639099436144800000?v=1",              "https://img.91app.com/webapi/imagesV3/Original/SalePage/10990964/4/639099436144800000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/10990964/5/639099436144800000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg"
+
+                ]
+            },
+            {
+                id: 2,
+                name: "典雅英倫風氣質樂福鞋 (1CT28)",
+                brand: "台灣富發牌",
+                category: "最新推介",
+                price: 168,
+                originalPrice: 208,
+                tag: "最新推介",
+                description: "台灣富發牌熱銷款式-氣質女神指定穿搭！三色❤素色簡約的柔韌皮面，完美襯托白皙雙腳，淺口鞋型好穿易脫，6mm極厚真皮乳膠厚墊✨ 吸震緩衝，彈性十足⚡久站久走不煩惱，手縫軟皮革面料，好穿舒適不咬腳👍，2.5cm橡膠粗跟設計，耐磨止滑，更拉長整體線條比例，無論搭配裙裝、褲裝，都能輕鬆穿出專屬質感。 **溫馨小提示，Size 偏小，可選大一碼，會更舒適**",
+                sizes: ["230", "235", "240", "245", "250", "255"],
+                colour: ["黑", "米白", "杏"],
+                images: [
+                    "https://img.91app.com/webapi/images/r/SalePageDesc/3868225/0.jpg?ts=111009", 
+                    "https://www.uty-im.com/im/goods/1CT28/1CT28-web.jpg",  
+                    "https://i.imgur.com/VFmce4x.jpg"
+
+                ]
+            },
+            {
+                id: 3,
+                name: "懶人雕花牛津鞋 (8085L)",
+                brand: "台灣富發牌",
+                category: "熱銷女鞋",
+                price: 188,
+                originalPrice: 308,
+                tag: "熱銷女鞋",
+                description: "嚴選細緻雕花，細緻簡約大方，經典黑白素色，輕鬆日常穿搭。搭配真皮乳膠墊，穿著舒適不累腳。",
+                 sizes: ["230", "235", "240", "245", "250", "255"],
+                colour: ["黑", "米"],
+                images: [
+         "https://img.91app.com/webapi/imagesV3/Original/SalePage/10988890/2/639099443757030000?v=1",              "https://img.91app.com/webapi/imagesV3/Original/SalePage/10988890/4/639099443757030000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/10988890/6/639099443757030000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg"
+
+                ]
+            },
+            {
+                id: 4,
+                name: "素界漫步懶人鞋 (1DH015)",
+                brand: "台灣富發牌",
+                category: "特選優惠鞋",
+                price: 118,
+                originalPrice: 208,
+                tag: "特選優惠鞋",
+                description: "台灣富發牌-親膚真皮皮革，舒適透氣不悶腳，簡約素面更百搭，細緻車縫更耐穿，橡膠厚底，顯得雙腳更修長，而且耐磨防滑更安全",
+                sizes: ["230", "235", "240", "245", "250", "255"],
+                colour: ["黑", "白"],
+                images: [
+                    "https://img.yec.tw/ob/image/e4286151-6a1b-4416-b6c4-55937c868fe2.jpg", 
+                    "https://img.yec.tw/ob/image/b46fbf6f-c905-46d1-bb53-eba28f3048b7.jpg",
+                    "https://img.yec.tw/ob/image/4876bcca-947a-48a9-8046-2690231ab005.jpg", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg" 
+
+                ]
+            },
+            {
+                id: 5,
+                name: "極簡革度休閒鞋 (8076L)",
+                brand: "台灣富發牌",
+                category: "特選優惠鞋",
+                price: 118,
+                originalPrice: 208,
+                tag: "特選優惠鞋",
+                description: "台灣富發牌-親膚真皮皮革，舒適透氣不悶腳，適合亞洲人的版型，完美包覆雙腳，日常上班穿搭，超彈力大底，質感又舒適，而且耐磨防滑更安全。",
+                sizes: ["230", "235", "240", "245", "250", "255"],
+                colour: ["黑", "白"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10701636/3/639099440531230000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10701636/5/639099440531230000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10701636/6/639099440531230000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg"
+
+                ]
+            },
+            {
+                id: 6,
+                name: "自在名伶樂福鞋 (1DH009)",
+                brand: "台灣富發牌",
+                category: "特選優惠鞋",
+                price: 118,
+                originalPrice: 208,
+                tag: "特選優惠鞋",
+description: "台灣富發牌-親膚真皮皮革，舒適透氣不悶腳，精緻金釦環設計，提升整體質感，真皮乳膠鞋墊，透氣乾爽不悶臭。",
+                sizes: ["230", "235", "240", "245", "250", "255"],
+                colour: ["黑", "白"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10252769/4/639099435694470000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10252769/5/639099435694470000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10252769/6/639099435694470000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg" 
+
+                ]
+            },
+            {
+                id: 7,
+                name: "個性鉚點懶人鞋 (1DH016)",
+                brand: "台灣富發牌",
+                category: "特選優惠鞋",
+                price: 118,
+                originalPrice: 208,
+                tag: "特選優惠鞋",
+                                description: "台灣富發牌-親膚真皮皮革，舒適透氣不悶腳，閃亮鉚釘設計，打造獨特風格，真皮乳膠鞋墊，透氣乾爽不悶臭，2cm低跟更好穿，橡膠大底防滑力up!。",
+                sizes: ["230", "235", "240", "245", "250", "255"],
+                colour: ["黑", "白"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10479089/4/639099437234100000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10479089/5/639099437234100000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10479089/6/639099437234100000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg" 
+                ]
+            },
+            {
+                id: 8,
+name: "零感律動休閒鞋 (8073L)",
+                brand: "台灣富發牌",
+                category: "特選優惠鞋",
+                price: 118,
+                originalPrice: 208,
+                tag: "特選優惠鞋",
+                                description: "台灣富發牌-親膚真皮皮革，舒適透氣不悶腳，百搭配色，日常穿搭超有型，真皮乳膠鞋墊，透氣乾爽不悶臭。",
+                sizes: ["230", "235", "240", "245", "250", "255"],
+                colour: ["黑", "白"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10987481/3/639099440953200000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10987481/4/639099440953200000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10987481/5/639099440953200000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg" 
+
+                ]
+            },
+            {
+                id: 9,
+                name: "真皮撞色魔鬼氈休閒鞋 (1DH014)",
+                brand: "台灣富發牌",
+                category: "特選優惠鞋",
+                price: 118,
+                originalPrice: 208,
+                tag: "特選優惠鞋",
+                                description: "台灣富發牌-可愛撞色超吸睛，魔鬼氈穿脫方便，嚴選柔軟真皮，親膚透氣更舒適，加厚3CM大底，增高耐磨又防滑!",
+                sizes: ["230", "235", "240", "245", "250", "255"],
+                colour: ["白X黃", "白X粉"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10479724/2/639099438595030000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10479724/3/639099438595030000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10479724/4/639099438595030000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/10479724/5/639099438595030000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg" ]
+            },
+            {
+                id: 10,
+                name: "輕旅漫步休閒鞋 (8077L)",
+                brand: "台灣富發牌",
+                category: "特選優惠鞋",
+                price: 118,
+                originalPrice: 208,
+                tag: "特選優惠鞋",
+                                description: "台灣富發牌-時尚簡約配色，休閒好百搭，加搭配真皮鞋墊，整體更吸汗透氣，台灣製橡膠底，耐磨防滑第一。 **溫馨小提示，Size 偏小，可選大一碼，會更舒適**",
+                sizes: ["230", "235", "240", "245", "250", "255"],
+                colour: ["白X藍","白X黃", "白X粉"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/9999528/4/639099441828530000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/9999528/3/639099441828530000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/9999528/5/639099441828530000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/9999528/6/639099441828530000?v=1", "https://i.imgur.com/VFmce4x.jpg" ]
+            },
+            {
+                id: 11,
+                name: "都市風格懶人鞋 (8082L)",
+                brand: "台灣富發牌",
+                category: "特選優惠鞋",
+                price: 118,
+                originalPrice: 208,
+                tag: "特選優惠鞋",
+                                description: "台灣富發牌-全真皮超柔軟，更舒適更好穿，簡約素面更百搭，細緻車縫都市風，橡膠輕量大底，耐磨防滑更安全",
+                sizes: ["230", "235", "240", "245", "250", "255"],
+                colour: ["白", "黑"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10677381/4/639135200887900000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10677381/5/639135200887900000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10677381/6/639135200887900000?v=1",  "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg" ]
+            },
+            {
+                id: 12,
+                name: "真皮圓扣奢雅樂福鞋 (8070L)",
+                brand: "台灣富發牌",
+                category: "特選優惠鞋",
+                price: 118,
+                originalPrice: 208,
+                tag: "特選優惠鞋",
+                                description: "台灣富發牌-嚴選真皮樂福鞋，細緻縫線更耐穿，親膚柔軟皮革，穿著舒適不易磨腳，配真皮鞋墊，整體更吸汗透氣!",
+                sizes: ["230", "235", "240", "245", "250", "255"],
+                colour: ["白"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/9874795/4/639099438185730000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/9874795/5/639099438185730000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/9874795/6/639099438185730000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg" ]
+            },
+            {
+                id: 13,
+                name: "經典皮革時尚帆布鞋 (1DH007)",
+                brand: "台灣富發牌",
+                category: "特選優惠鞋",
+                price: 118,
+                originalPrice: 208,
+                tag: "特選優惠鞋",
+                                description: "台灣富發牌-經典時尚皮革，黑白兩色好搭配，嚴選柔軟真皮，親膚透氣更舒適，真皮乳膠鞋墊，提升舒適度，耐磨橡膠大底，好穿好走更舒適!",
+                sizes: ["230", "235", "240", "245", "250", "255"],
+                colour: ["白", "黑"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10029256/4/639099440734700000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10029256/3/639099440734700000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10029256/5/639099440734700000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/10029256/6/639099440734700000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg" ]
+            },
+            {
+                id: 14,
+                name: "甜感蝴蝶豆豆鞋 (1DR86)",
+                brand: "台灣富發牌",
+                category: "熱銷女鞋",
+                price: 168,
+                originalPrice: 208,
+                tag: "熱銷女鞋",
+                description: "經典素面款式，細緻簡約大方，完美搭配牛仔褲與長裙。台灣師傅手工車縫，線條流暢，採用真皮乳膠鞋墊，穿起舒適加倍，行街通勤百搭款，耐磨防滑又安全風格。 **溫馨小提示，Size 偏小，可選大一碼，會更舒適**",
+                 sizes: ["230", "235", "240", "245", "250", "255"],
+                colour: ["黑", "白", "粉杏"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10991157/6/639183360008570000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10991157/4/639183360008570000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10991157/3/639183360008570000?v=1", "https://i.imgur.com/VFmce4x.jpg" ]
+            },
+            {
+                id: 15,
+                name: "甜感蝶結莫卡辛豆豆鞋 (1LD01)",
+                brand: "台灣富發牌",
+                category: "熱銷女鞋",
+                price: 168,
+                originalPrice: 208,
+                tag: "熱銷女鞋",
+                                description: "台灣富發牌-經典莫卡辛鞋型 配搭甜美蝴蝶結設計，鞋面更採用防潑PU材質，柔軟好整理，真皮乳膠鞋墊，提升腳底柔軟舒適感!",
+                sizes: ["230", "235", "240", "245", "250", "255"],
+                colour: ["黑灰", "奶茶", "咖啡"],
+                images: [
+                    "https://i8.momoshop.com.tw/1784719660/goodsimg/TP000/6206/0000/460/TP00062060000460_R3_m.jpg", 
+                    "https://i8.momoshop.com.tw/1784719660/goodsimg/TP000/6206/0000/460/TP00062060000460_R4_m.jpg",
+                    "https://i7.momoshop.com.tw/1784719660/goodsimg/TP000/6206/0000/460/TP00062060000460_R5_m.jpg", "https://scontent.fhkg10-1.fna.fbcdn.net/v/t39.30808-6/801885739_1152382610445159_3030429298107579579_n.jpg?stp=dst-jpg_tt6&cstp=mx1000x1000&ctp=s1000x1000&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=2T6JGxijuSIQ7kNvwHVeGBt&_nc_oc=Adoclidv75sl7Mh-F-u0ZWjfs4Qx7D25yKFksnYayvaxvm3ZeFsKwX8AholoLtlpOYk&_nc_zt=23&_nc_ht=scontent.fhkg10-1.fna&_nc_gid=mAdSS2zC37gDfG6Fe65UbQ&_nc_ss=7b289&oh=00_AQNHtmKadFwoT3p3yTkKVQ83oGU4p47ry6I84EysyMTTwg&oe=6AD3BFE4", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg" ]
+            },
+            {
+                id: 16,
+                name: "優雅流蘇樂福鞋 (8067L)",
+                brand: "台灣富發牌",
+                category: "特選優惠鞋",
+                price: 128,
+                originalPrice: 228,
+                tag: "特選優惠鞋",
+                                description: "台灣富發牌-流蘇造型設計，使鞋身充滿份量感，嚴選柔軟真皮，親膚透氣更舒適，真皮乳膠鞋墊，舒適度再升級!",
+                sizes: ["230", "235", "240", "245", "250", "255"],
+                colour: ["白"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10029236/4/639099443158670000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10029236/5/639099443158670000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10029236/6/639099443158670000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg"]
+            },
+            {
+                id: 17,
+                name: "日常百搭懶人鞋 (1BE94)",
+                brand: "台灣富發牌",
+                category: "最新推介",
+                price: 168,
+                originalPrice: 208,
+                tag: "最新推介",
+                                description: "台灣富發牌-鬆緊帶拼接不緊勒，增加鞋面延展性，嚴選輕量橡膠鞋底，行走舒適無負，採用真皮鞋墊，輕鬆達到緩震舒適感!  **溫馨小提示，Size 偏小，可選大一碼，會更舒適**  ***粉色售罄****",
+                sizes: ["230", "235", "240", "245", "250", "255"],
+                colour: ["黑", "白", "灰"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/7023565/5/639131890561930000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/7023565/0/639131890561930000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/7023565/1/639131890561930000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/7023565/2/639131890561930000?v=1","https://img.91app.com/webapi/imagesV3/Original/SalePage/7023565/6/639131890561930000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/7023565/7/639131890561930000?v=1",                    "https://i.imgur.com/VFmce4x.jpg"]
+            },
+            {
+                id: 18,
+                name: "MIT日系小清新豆豆鞋 (1DR24)",
+                brand: "台灣富發牌",
+                category: "最新推介",
+                price: 168,
+                originalPrice: 208,
+                tag: "最新推介",
+                                description: "台灣富發牌-針對上班出遊，加強內在舒適度，甜甜超百搭! 柔軟真皮乳膠墊，猶如漫步雲端，老師傅純手工縫製，精緻耐穿。",
+                sizes: ["230", "235", "240", "245", "250", "255"],
+                colour: ["黑", "白", "粉"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/7279337/7/639183356568200000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/7279337/8/639183356568200000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/7279337/9/639183356568200000?v=1", "https://i.imgur.com/10ltqzC.png", "https://i.imgur.com/y9l9EAZ.jpg"]
+            },
+            {
+                id: 19,
+                name: "輕奢夾趾拖鞋 (1PL240)",
+                brand: "台灣富發牌",
+                category: "最新推介",
+                price: 108,
+                originalPrice: 168,
+                tag: "最新推介",
+               description: "台灣富發牌-簡約細帶設計，氣質感瞬間提升，橡膠防滑鞋底，安全穩定沒煩惱，腳後跟Q彈軟墊，穿久也舒適!",
+                sizes: ["230", "240", "250", "260"],
+                colour: ["黑", "綠", "米"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/2/639135200846000000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/4/639135200846000000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/5/639135200846000000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg"]
+            },
+            {
+                id: 20,
+                name: "蝶結漫步豆豆鞋 (1DR87)",
+                brand: "台灣富發牌",
+                category: "最新推介",
+                price: 168,
+                originalPrice: 208,
+                tag: "最新推介",
+                description: "台灣富發牌-優雅蝶結點綴，氣質感大提升，親膚柔軟皮革，舒適透氣不腳，加厚橡膠大底，耐磨防滑更安全!   **溫馨小提示，Size 偏小，可選大一碼，會更舒適**",
+                sizes: ["230", "235", "240", "245", "250", "255"],
+                colour: ["黑", "白", "灰"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11044289/2/639183360711470000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11044289/4/639183360711470000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11044289/5/639183360711470000?v=1", "https://i.imgur.com/VFmce4x.jpg"]
+            },
+            {
+             
+                id: 21,
+                name: "流蘇感懶人鞋 (1BD18)",
+                brand: "台灣富發牌",
+                category: "最新推介",
+                price: 178,
+                originalPrice: 228,
+                tag: "最新推介",
+               description: "台灣富發牌-經典設計！氣質流蘇感造型，舒適透氣，日本特製除臭紗軟墊，質感100分！精細手工車縫大底!",
+                sizes: ["230", "235", "240", "245", "250", "255"],
+                colour: ["黑", "白"],
+                images: [  "https://img.91app.com/webapi/imagesV3/Original/SalePage/3304897/0/639183389501430000?v=1", 
+ "https://img.91app.com/webapi/imagesV3/Original/SalePage/3304897/2/639183389501430000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/3304897/7/639183389501430000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/3304897/8/639183389501430000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/3304897/9/639183389501430000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg" ]
+            },
+            {
+                id: 22,
+                name: "閃亮亮釦飾懶人鞋 (1BD55)",
+                brand: "台灣富發牌",
+                category: "最新推介",
+                price: 168,
+                originalPrice: 168,
+                tag: "最新推介",
+               description: "台灣富發牌-簡約細帶設計，氣質感瞬間提升，橡膠防滑鞋底，安全穩定沒煩惱，腳後跟Q彈軟墊，穿久也舒適!",
+                sizes: ["230", "235", "240", "245", "250", "255"],
+                colour: ["黑", "白"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/6973983/3/638955220636470000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/6973983/0/638955220636470000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/6973983/2/638955220636470000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/6973983/6/638955220636470000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/6973983/8/638955220636470000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/6973983/9/638955220636470000?v=1",  "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg"]
+            },
+            {
+                id: 23,
+                name: "釦映緞影樂福鞋 (1DR82)",
+                brand: "台灣富發牌",
+                category: "最新推介",
+                price: 188,
+                originalPrice: 308,
+                tag: "最新推介",
+               description: "台灣富發牌-簡經典氣質優雅跟鞋，百搭黑杏兩色，真皮乳膠鞋墊舒適穿著，台灣製造手工鞋品牌，品質有保障。",
+                sizes: ["230", "235", "240", "245", "250", "255"],
+                colour: ["黑", "杏"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10988603/3/639099439796900000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10988603/4/639099439796900000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/10988603/2/639099439796900000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/10988603/5/639099439796900000?v=1",  "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg"] },
+            {
+                id: 24,
+                name: "四季穿搭絕配懶人鞋 (1BC59)",
+                brand: "台灣富發牌",
+                category: "最新推介",
+                price: 178,
+                originalPrice: 258,
+                tag: "最新推介",
+               description: "台灣富發牌-素色簡約鞋面，輕鬆百搭，真皮乳膠鞋墊，舒適一整天，台灣橡膠鞋底，防滑又耐磨!",
+                sizes: ["230", "235", "240", "245", "250", "255"],
+                colour: ["黑", "白", "藍", "奶茶"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/7760038/5/639135200428700000?v=1", 
+"https://img.91app.com/webapi/imagesV3/Original/SalePage/7760038/0/639135200428700000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/7760038/1/639135200428700000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/7760038/2/639135200428700000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/7760038/3/639135200428700000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/7760038/8/639135200428700000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/7760038/9/639135200428700000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg"]
+            },
+            {
+                id: 25,
+                name: "幻夢星湖鑽石休閒鞋 (1BE88)",
+                brand: "台灣富發牌",
+                category: "最新推介",
+                price: 178,
+                originalPrice: 258,
+                tag: "最新推介",
+               description: "台灣富發牌-夢幻水鑽配飾，簡約又帶點華麗感，真皮乳膠鞋墊，軟Q舒適耐久走，踝枕加厚設計 偷偷增高，保護腳踝不咬腳!",
+                sizes: ["230", "235", "240", "245", "250", "255"],
+                colour: ["黑", "白"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/6713911/3/638955217137770000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/6713911/2/638955217137770000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/6713911/1/638955217137770000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/6713911/6/638955217137770000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/6713911/8/638955217137770000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/6713911/9/638955217137770000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg"]
+            },
+            {
+                id: 26,
+                name: "優雅珍珠寬帶懶人鞋 (1BE57)",
+                brand: "台灣富發牌",
+                category: "最新推介",
+                price: 178,
+                originalPrice: 258,
+                tag: "最新推介",
+               description: "台灣富發牌-珍珠點綴加寬帶設計，穿上氣質加分，柔軟真皮鞋墊，好穿舒適更耐走，楦頭微偏小，腳板較寬建議穿大半號!  **溫馨小提示，Size 偏小，可選大一碼，會更舒適**",
+                sizes: ["230", "235", "240", "245", "250", "255"],
+                colour: ["黑", "白"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/5954943/3/639135200518370000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/5954943/0/639135200518370000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/5954943/5/639135200518370000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/5954943/6/639135200518370000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/5954943/8/639135200518370000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/5954943/9/639135200518370000?v=1", "https://i.imgur.com/VFmce4x.jpg"]
+            },
+            {
+                id: 27,
+                name: "星光皮革感銀邊懶人鞋 (1BD41)",
+                brand: "台灣富發牌",
+                category: "最新推介",
+                price: 178,
+                originalPrice: 258,
+                tag: "最新推介",
+               description: "台灣富發牌-璀璨星星拼接豐富整體鞋身設計，不穿襪也不怕咬腳，舒適柔軟內裡，整天穿著無負擔**",
+                sizes: ["230", "235", "240", "245", "250", "255"],
+                colour: ["黑", "白"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/5787674/3/639183390503000000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/5787674/0/639183390503000000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/5787674/5/639183390503000000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/5787674/6/639183390503000000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/5787674/8/639183390503000000?v=1", "https://img.91app.com/webapi/imagesV3/Original/SalePage/5787674/9/639183390503000000?v=1", "https://i.imgur.com/VFmce4x.jpg"]
+            },
+            {
+                id: 28,
+                name: "復刻水墨印花便鞋 (1BD43)",
+                brand: "台灣富發牌",
+                category: "最新推介",
+                price: 178,
+                originalPrice: 258,
+                tag: "最新推介",
+               description: "台灣富發牌-棉揉親膚帆布質料，經典復刻東方印花經典復刻東方印花，TPR安心防滑鞋底",
+                sizes: ["230", "235", "240", "245", "250", "255"],
+                colour: ["藍", "白"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/3304528/0/639135200492130000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/3304528/2/639135200492130000?v=1","https://img.91app.com/webapi/imagesV3/Original/SalePage/3304528/7/639135200492130000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/3304528/8/639135200492130000?v=1","https://img.91app.com/webapi/imagesV3/Original/SalePage/3304528/9/639135200492130000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg"]
+            },
+            {
+                id: 19,
+                name: "輕奢夾趾拖鞋 (1PL240)",
+                brand: "台灣富發牌",
+                category: "最新推介",
+                price: 108,
+                originalPrice: 168,
+                tag: "最新推介",
+               description: "台灣富發牌-簡約細帶設計，氣質感瞬間提升，橡膠防滑鞋底，安全穩定沒煩惱，腳後跟Q彈軟墊，穿久也舒適!",
+                sizes: ["230", "240", "250", "260"],
+                colour: ["黑", "綠", "米"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/2/639135200846000000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/4/639135200846000000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/5/639135200846000000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg"]
+            },
+            {
+                id: 19,
+                name: "輕奢夾趾拖鞋 (1PL240)",
+                brand: "台灣富發牌",
+                category: "最新推介",
+                price: 108,
+                originalPrice: 168,
+                tag: "最新推介",
+               description: "台灣富發牌-簡約細帶設計，氣質感瞬間提升，橡膠防滑鞋底，安全穩定沒煩惱，腳後跟Q彈軟墊，穿久也舒適!",
+                sizes: ["230", "240", "250", "260"],
+                colour: ["黑", "綠", "米"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/2/639135200846000000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/4/639135200846000000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/5/639135200846000000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg"]
+            },
+            {
+                id: 19,
+                name: "輕奢夾趾拖鞋 (1PL240)",
+                brand: "台灣富發牌",
+                category: "最新推介",
+                price: 108,
+                originalPrice: 168,
+                tag: "最新推介",
+               description: "台灣富發牌-簡約細帶設計，氣質感瞬間提升，橡膠防滑鞋底，安全穩定沒煩惱，腳後跟Q彈軟墊，穿久也舒適!",
+                sizes: ["230", "240", "250", "260"],
+                colour: ["黑", "綠", "米"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/2/639135200846000000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/4/639135200846000000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/5/639135200846000000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg"]
+            },
+            {
+                id: 19,
+                name: "輕奢夾趾拖鞋 (1PL240)",
+                brand: "台灣富發牌",
+                category: "最新推介",
+                price: 108,
+                originalPrice: 168,
+                tag: "最新推介",
+               description: "台灣富發牌-簡約細帶設計，氣質感瞬間提升，橡膠防滑鞋底，安全穩定沒煩惱，腳後跟Q彈軟墊，穿久也舒適!",
+                sizes: ["230", "240", "250", "260"],
+                colour: ["黑", "綠", "米"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/2/639135200846000000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/4/639135200846000000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/5/639135200846000000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg"]
+            },
+            {
+                id: 19,
+                name: "輕奢夾趾拖鞋 (1PL240)",
+                brand: "台灣富發牌",
+                category: "最新推介",
+                price: 108,
+                originalPrice: 168,
+                tag: "最新推介",
+               description: "台灣富發牌-簡約細帶設計，氣質感瞬間提升，橡膠防滑鞋底，安全穩定沒煩惱，腳後跟Q彈軟墊，穿久也舒適!",
+                sizes: ["230", "240", "250", "260"],
+                colour: ["黑", "綠", "米"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/2/639135200846000000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/4/639135200846000000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/5/639135200846000000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg"]
+            },
+            {
+                id: 19,
+                name: "輕奢夾趾拖鞋 (1PL240)",
+                brand: "台灣富發牌",
+                category: "最新推介",
+                price: 108,
+                originalPrice: 168,
+                tag: "最新推介",
+               description: "台灣富發牌-簡約細帶設計，氣質感瞬間提升，橡膠防滑鞋底，安全穩定沒煩惱，腳後跟Q彈軟墊，穿久也舒適!",
+                sizes: ["230", "240", "250", "260"],
+                colour: ["黑", "綠", "米"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/2/639135200846000000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/4/639135200846000000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/5/639135200846000000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg"]
+            },
+            {
+                id: 19,
+                name: "輕奢夾趾拖鞋 (1PL240)",
+                brand: "台灣富發牌",
+                category: "最新推介",
+                price: 108,
+                originalPrice: 168,
+                tag: "最新推介",
+               description: "台灣富發牌-簡約細帶設計，氣質感瞬間提升，橡膠防滑鞋底，安全穩定沒煩惱，腳後跟Q彈軟墊，穿久也舒適!",
+                sizes: ["230", "240", "250", "260"],
+                colour: ["黑", "綠", "米"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/2/639135200846000000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/4/639135200846000000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/5/639135200846000000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg"]
+            },
+            {
+                id: 19,
+                name: "輕奢夾趾拖鞋 (1PL240)",
+                brand: "台灣富發牌",
+                category: "最新推介",
+                price: 108,
+                originalPrice: 168,
+                tag: "最新推介",
+               description: "台灣富發牌-簡約細帶設計，氣質感瞬間提升，橡膠防滑鞋底，安全穩定沒煩惱，腳後跟Q彈軟墊，穿久也舒適!",
+                sizes: ["230", "240", "250", "260"],
+                colour: ["黑", "綠", "米"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/2/639135200846000000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/4/639135200846000000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/5/639135200846000000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg"]
+            },
+            {
+                id: 19,
+                name: "輕奢夾趾拖鞋 (1PL240)",
+                brand: "台灣富發牌",
+                category: "最新推介",
+                price: 108,
+                originalPrice: 168,
+                tag: "最新推介",
+               description: "台灣富發牌-簡約細帶設計，氣質感瞬間提升，橡膠防滑鞋底，安全穩定沒煩惱，腳後跟Q彈軟墊，穿久也舒適!",
+                sizes: ["230", "240", "250", "260"],
+                colour: ["黑", "綠", "米"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/2/639135200846000000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/4/639135200846000000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/5/639135200846000000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg"]
+            },
+            {
+                id: 19,
+                name: "輕奢夾趾拖鞋 (1PL240)",
+                brand: "台灣富發牌",
+                category: "最新推介",
+                price: 108,
+                originalPrice: 168,
+                tag: "最新推介",
+               description: "台灣富發牌-簡約細帶設計，氣質感瞬間提升，橡膠防滑鞋底，安全穩定沒煩惱，腳後跟Q彈軟墊，穿久也舒適!",
+                sizes: ["230", "240", "250", "260"],
+                colour: ["黑", "綠", "米"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/2/639135200846000000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/4/639135200846000000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/5/639135200846000000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg"]
+            },
+            {
+                id: 19,
+                name: "輕奢夾趾拖鞋 (1PL240)",
+                brand: "台灣富發牌",
+                category: "最新推介",
+                price: 108,
+                originalPrice: 168,
+                tag: "最新推介",
+               description: "台灣富發牌-簡約細帶設計，氣質感瞬間提升，橡膠防滑鞋底，安全穩定沒煩惱，腳後跟Q彈軟墊，穿久也舒適!",
+                sizes: ["230", "240", "250", "260"],
+                colour: ["黑", "綠", "米"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/2/639135200846000000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/4/639135200846000000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/5/639135200846000000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg"]
+            },
+            {
+                id: 19,
+                name: "輕奢夾趾拖鞋 (1PL240)",
+                brand: "台灣富發牌",
+                category: "最新推介",
+                price: 108,
+                originalPrice: 168,
+                tag: "最新推介",
+               description: "台灣富發牌-簡約細帶設計，氣質感瞬間提升，橡膠防滑鞋底，安全穩定沒煩惱，腳後跟Q彈軟墊，穿久也舒適!",
+                sizes: ["230", "240", "250", "260"],
+                colour: ["黑", "綠", "米"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/2/639135200846000000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/4/639135200846000000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/5/639135200846000000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg"]
+            },
+            {
+                id: 19,
+                name: "輕奢夾趾拖鞋 (1PL240)",
+                brand: "台灣富發牌",
+                category: "最新推介",
+                price: 108,
+                originalPrice: 168,
+                tag: "最新推介",
+               description: "台灣富發牌-簡約細帶設計，氣質感瞬間提升，橡膠防滑鞋底，安全穩定沒煩惱，腳後跟Q彈軟墊，穿久也舒適!",
+                sizes: ["230", "240", "250", "260"],
+                colour: ["黑", "綠", "米"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/2/639135200846000000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/4/639135200846000000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/5/639135200846000000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg"]
+            },
+            {
+                id: 19,
+                name: "輕奢夾趾拖鞋 (1PL240)",
+                brand: "台灣富發牌",
+                category: "最新推介",
+                price: 108,
+                originalPrice: 168,
+                tag: "最新推介",
+               description: "台灣富發牌-簡約細帶設計，氣質感瞬間提升，橡膠防滑鞋底，安全穩定沒煩惱，腳後跟Q彈軟墊，穿久也舒適!",
+                sizes: ["230", "240", "250", "260"],
+                colour: ["黑", "綠", "米"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/2/639135200846000000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/4/639135200846000000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/5/639135200846000000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg"]
+            },
+            {
+                id: 19,
+                name: "輕奢夾趾拖鞋 (1PL240)",
+                brand: "台灣富發牌",
+                category: "最新推介",
+                price: 108,
+                originalPrice: 168,
+                tag: "最新推介",
+               description: "台灣富發牌-簡約細帶設計，氣質感瞬間提升，橡膠防滑鞋底，安全穩定沒煩惱，腳後跟Q彈軟墊，穿久也舒適!",
+                sizes: ["230", "240", "250", "260"],
+                colour: ["黑", "綠", "米"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/2/639135200846000000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/4/639135200846000000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/5/639135200846000000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg"]
+            },
+            {
+                id: 19,
+                name: "輕奢夾趾拖鞋 (1PL240)",
+                brand: "台灣富發牌",
+                category: "最新推介",
+                price: 108,
+                originalPrice: 168,
+                tag: "最新推介",
+               description: "台灣富發牌-簡約細帶設計，氣質感瞬間提升，橡膠防滑鞋底，安全穩定沒煩惱，腳後跟Q彈軟墊，穿久也舒適!",
+                sizes: ["230", "240", "250", "260"],
+                colour: ["黑", "綠", "米"],
+                images: [
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/2/639135200846000000?v=1", 
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/4/639135200846000000?v=1",
+                    "https://img.91app.com/webapi/imagesV3/Original/SalePage/11202995/5/639135200846000000?v=1", "https://live.staticflickr.com/65535/51431516597_191a8b32e8_o.jpg"]
+            }
+        ];
+
+        // 狀態變數
+        let currentCategory = 'all';
+        let searchQuery = '';
+        let wishlist = JSON.parse(localStorage.getItem('cw_wishlist') || '[]');
+        let selectedSizeMap = {}; 
+        let selectedColorMap = {};
+
+        function renderProducts() {
+            const grid = document.getElementById('product-grid');
+            const noProducts = document.getElementById('no-products');
+            const countEl = document.getElementById('product-count');
+
+            grid.innerHTML = '';
+
+            const filtered = products.filter(p => {
+                const matchCategory = currentCategory === 'all' || p.category === currentCategory;
+                const matchSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                                    p.brand.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                                    p.description.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchCategory && matchSearch;
+            });
+
+            countEl.textContent = filtered.length;
+
+            if (filtered.length === 0) {
+                noProducts.classList.remove('hidden');
+                return;
+            } else {
+                noProducts.classList.add('hidden');
+            }
+
+            filtered.forEach(product => {
+                const isLiked = wishlist.some(item => item.id === product.id);
+                const card = document.createElement('div');
+                card.className = "group bg-white rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden relative";
+
+                card.innerHTML = `
+                    <button onclick="event.stopPropagation(); toggleWishlist(${product.id})" class="absolute top-3 right-3 z-20 w-9 h-9 rounded-full ${isLiked ? 'bg-rose-50 text-rose-500' : 'bg-white/80 text-slate-400 hover:text-rose-500'} backdrop-blur-md flex items-center justify-center transition shadow-sm">
+                        <i class="${isLiked ? 'fa-solid' : 'fa-regular'} fa-heart text-base"></i>
+                    </button>
+
+                    <div class="relative aspect-[4/3] bg-slate-100 overflow-hidden cursor-pointer" onclick="openModal(${product.id})">
+                        <img src="${product.images[0]}" alt="${product.name}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                        ${product.images[1] ? `<img src="${product.images[1]}" alt="${product.name}" class="w-full h-full object-cover object-center absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">` : ''}
+                        
+                        <div class="absolute top-3 left-3 bg-orange-600/90 backdrop-blur-md text-white text-[10px] font-extrabold tracking-wider uppercase px-2.5 py-1 rounded-full shadow-sm">
+                            ${product.tag}
+                        </div>
+                    </div>
+
+                    <div class="p-5 flex flex-col flex-grow justify-between cursor-pointer" onclick="openModal(${product.id})">
+                        <div>
+                            <span class="text-[11px] font-bold text-orange-600 tracking-wider uppercase block mb-1">${product.brand}</span>
+                            <h3 class="font-bold text-slate-900 text-base group-hover:text-orange-600 transition-colors line-clamp-1">${product.name}</h3>
+                            <p class="text-xs text-slate-500 mt-1.5 line-clamp-2 leading-relaxed">${product.description}</p>
+                        </div>
+
+                        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+                            <div>
+                                <span class="text-lg font-black text-slate-900">HK$${product.price}</span>
+                                <span class="text-xs text-slate-400 line-through ml-1">HK$${product.originalPrice}</span>
+                            </div>
+                            <span class="text-xs font-semibold text-slate-700 bg-slate-100 group-hover:bg-orange-600 group-hover:text-white px-3 py-1.5 rounded-full transition-colors">
+                                詳情 & 尺碼
+                            </span>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function openModal(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            selectedSizeMap[product.id] = product.sizes[0];
+            selectedColorMap[product.id] = product.colour[0];
+
+            const modal = document.getElementById('product-modal');
+            const modalContent = document.getElementById('modal-content');
+            const isLiked = wishlist.some(item => item.id === product.id);
+
+            const sizesHtml = product.sizes.map((size, idx) => `
+                <button type="button" onclick="selectModalSize(${product.id}, '${size}', this)" class="modal-size-btn border px-3 py-2 rounded-xl text-xs font-semibold transition ${idx === 0 ? 'border-orange-600 bg-orange-50 text-orange-700' : 'border-slate-200 text-slate-700 hover:border-slate-300'}">
+                    ${size}
+                </button>
+            `).join('');
+
+            const colourHtml = product.colour.map((col, idx) => `
+                <button type="button" onclick="selectModalColor(${product.id}, '${col}', this)" class="modal-color-btn border px-3 py-2 rounded-xl text-xs font-semibold transition ${idx === 0 ? 'border-orange-600 bg-orange-50 text-orange-700' : 'border-slate-200 text-slate-700 hover:border-slate-300'}">
+                    ${col}
+                </button>
+            `).join('');
+
+            const thumbsHtml = product.images.map((img, idx) => `
+                <button onclick="changeModalImg('${img}', this)" class="thumb-btn border-2 rounded-xl overflow-hidden aspect-square ${idx === 0 ? 'border-orange-600' : 'border-transparent'} hover:opacity-90 transition">
+                    <img src="${img}" class="w-full h-full object-cover">
+                </button>
+            `).join('');
+
+            modalContent.innerHTML = `
+                <div class="p-6 sm:p-8 relative">
+                    <button onclick="closeModal()" class="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600 transition">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <div class="aspect-rectangle bg-slate-100 rounded-2xl overflow-hidden shadow-inner relative">
+                                <img id="modal-main-image" src="${product.images[0]}" alt="${product.name}" class="w-full h-full object-cover">
+                            </div>
+                            <div class="grid grid-cols-4 gap-2">
+                                ${thumbsHtml}
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col justify-between space-y-6">
+                            <div>
+                                <div class="flex items-center space-x-2 mb-2">
+                                    <span class="bg-orange-50 text-orange-700 text-xs font-bold px-2.5 py-0.5 rounded-full border border-orange-200">${product.brand}</span>
+                                    <span class="bg-emerald-50 text-emerald-700 text-xs font-bold px-2.5 py-0.5 rounded-full border border-emerald-200">香港代理正品</span>
+                                </div>
+                                <h2 class="text-2xl font-black text-slate-900">${product.name}</h2>
+                                
+                                <div class="flex items-baseline space-x-2 mt-2">
+                                    <span class="text-2xl font-black text-slate-900">HK$${product.price}</span>
+                                    <span class="text-sm text-slate-400 line-through">HK$${product.originalPrice}</span>
+                                </div>
+
+                                    <span class="font-bold text-slate-800 block">產品介紹：</span>
+                                    <span>${product.description}</span>
+                                </div>
+
+                                <div class="mt-5 space-y-2">
+                                    <div class="flex justify-between items-center text-xs">
+                                        <span class="font-bold text-slate-800 uppercase tracking-wider">選擇顏色</span>
+                                    </div>
+                                    <div class="grid grid-cols-4 gap-2" id="modal-color-container">
+                                        ${colourHtml}
+                                    </div>
+                                </div>
+
+                                <div class="mt-5 space-y-2">
+                                    <div class="flex justify-between items-center text-xs">
+                                        <span class="font-bold text-slate-800 uppercase tracking-wider">選擇尺碼 (CM)</span>
+                                      
+                                    </div>
+                                    <div class="grid grid-cols-4 gap-2" id="modal-size-container">
+                                        ${sizesHtml}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2 pt-4 border-t border-slate-100">
+                                <button onclick="sendWhatsAppQuery(${product.id})" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-4 rounded-2xl text-center shadow-lg shadow-emerald-600/20 transition flex items-center justify-center space-x-2 text-sm">
+                                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                                    <span>WhatsApp 立即下單 / 查詢</span>
+                                </button>
+                                <button onclick="toggleWishlist(${product.id}); closeModal();" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-3 px-4 rounded-2xl text-center transition flex items-center justify-center space-x-2 text-xs">
+                                    <i class="${isLiked ? 'fa-solid text-rose-500' : 'fa-regular'} fa-heart"></i>
+                                    <span>${isLiked ? '已在心水清單中' : '加入心水清單 (Wishlist)'}</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modalContent.classList.remove('scale-95');
+            modalContent.classList.add('scale-100');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('product-modal');
+            const modalContent = document.getElementById('modal-content');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+        }
+
+        function changeModalImg(src, btn) {
+            document.getElementById('modal-main-image').src = src;
+            document.querySelectorAll('.thumb-btn').forEach(b => {
+                b.classList.remove('border-orange-600');
+                b.classList.add('border-transparent');
+            });
+            btn.classList.remove('border-transparent');
+            btn.classList.add('border-orange-600');
+        }
+
+        function selectModalSize(productId, size, btn) {
+            selectedSizeMap[productId] = size;
+            const container = btn.closest('#modal-size-container');
+            container.querySelectorAll('.modal-size-btn').forEach(b => {
+                b.classList.remove('border-orange-600', 'bg-orange-50', 'text-orange-700');
+                b.classList.add('border-slate-200', 'text-slate-700');
+            });
+            btn.classList.remove('border-slate-200', 'text-slate-700');
+            btn.classList.add('border-orange-600', 'bg-orange-50', 'text-orange-700');
+        }
+
+        function selectModalColor(productId, color, btn) {
+            selectedColorMap[productId] = color;
+            const container = btn.closest('#modal-color-container');
+            container.querySelectorAll('.modal-color-btn').forEach(b => {
+                b.classList.remove('border-orange-600', 'bg-orange-50', 'text-orange-700');
+                b.classList.add('border-slate-200', 'text-slate-700');
+            });
+            btn.classList.remove('border-slate-200', 'text-slate-700');
+            btn.classList.add('border-orange-600', 'bg-orange-50', 'text-orange-700');
+        }
+
+        function toggleWishlist(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const index = wishlist.findIndex(item => item.id === productId);
+            if (index > -1) {
+                wishlist.splice(index, 1);
+            } else {
+                wishlist.push(product);
+            }
+            localStorage.setItem('cw_wishlist', JSON.stringify(wishlist));
+            updateWishlistUI();
+            renderProducts();
+        }
+
+        function updateWishlistUI() {
+            const badge = document.getElementById('wishlist-badge');
+            const itemsContainer = document.getElementById('wishlist-items');
+            const waBtn = document.getElementById('wishlist-wa-btn');
+
+            if (wishlist.length > 0) {
+                badge.textContent = wishlist.length;
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
+
+            if (wishlist.length === 0) {
+                itemsContainer.innerHTML = `
+                    <div class="text-center py-16 text-slate-400 space-y-2">
+                        <i class="fa-regular fa-heart text-4xl text-slate-300"></i>
+                        <p class="text-xs">你的心水清單暫時空空如也</p>
+                    </div>
+                `;
+                waBtn.href = "#";
+                waBtn.classList.add('opacity-50', 'pointer-events-none');
+            } else {
+                itemsContainer.innerHTML = wishlist.map(item => `
+                    <div class="flex items-center space-x-3 bg-slate-50 p-3 rounded-2xl border border-slate-100 relative group">
+                        <img src="${item.images[0]}" alt="${item.name}" class="w-16 h-16 object-cover rounded-xl flex-shrink-0">
+                        <div class="flex-grow min-w-0">
+                            <h4 class="text-xs font-bold text-slate-900 truncate">${item.name}</h4>
+                            <p class="text-xs text-orange-600 font-bold mt-0.5">HK$${item.price}</p>
+                        </div>
+                        <button onclick="toggleWishlist(${item.id})" class="text-slate-400 hover:text-rose-500 p-2 transition">
+                            <i class="fa-solid fa-trash-can text-xs"></i>
+                        </button>
+                    </div>
+                `).join('');
+
+                const names = wishlist.map(i => `${i.name} (HK$${i.price})`).join(', ');
+                const text = encodeURIComponent(`你好，我想查詢以下心水清單中的鞋款：\n${names}`);
+                waBtn.href = `https://wa.me/85267914732?text=${text}`;
+                waBtn.classList.remove('opacity-50', 'pointer-events-none');
+            }
+        }
+
+        function toggleWishlistDrawer() {
+            const backdrop = document.getElementById('wishlist-backdrop');
+            const panel = document.getElementById('wishlist-panel');
+
+            if (panel.classList.contains('translate-x-full')) {
+                backdrop.classList.remove('opacity-0', 'pointer-events-none');
+                panel.classList.remove('translate-x-full');
+            } else {
+                backdrop.classList.add('opacity-0', 'pointer-events-none');
+                panel.classList.add('translate-x-full');
+            }
+        }
+
+        function sendWhatsAppQuery(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            const size = selectedSizeMap[productId] || product.sizes[0];
+            const color = selectedColorMap[productId] || product.colour[0];
+            const text = encodeURIComponent(`你好！我想查詢 / 預約試穿以下鞋款：\n*${product.name}*\n品牌：${product.brand}\n價格：HK$${product.price}\n選擇顏色：${color}\n選擇尺碼：${size}`);
+            window.open(`https://wa.me/85267914732?text=${text}`, '_blank');
+        }
+
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('bg-slate-900', 'text-white', 'shadow-sm');
+                    b.classList.add('bg-white', 'text-slate-600', 'hover:bg-slate-100', 'border', 'border-slate-200');
+                });
+                btn.classList.remove('bg-white', 'text-slate-600', 'hover:bg-slate-100', 'border', 'border-slate-200');
+                btn.classList.add('bg-slate-900', 'text-white', 'shadow-sm');
+
+                currentCategory = btn.getAttribute('data-category');
+                renderProducts();
+            });
+        });
+
+        document.getElementById('search-input').addEventListener('input', (e) => {
+            searchQuery = e.target.value.trim();
+            renderProducts();
+        });
+
+        renderProducts();
+        updateWishlistUI();
+    </script>
+</body>
+</html>
